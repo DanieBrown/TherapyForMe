@@ -28,5 +28,11 @@ public class profileActivity extends AppCompatActivity {
         TextView favText1 = (TextView) findViewById(R.id.movieTextFave2);
         favText1.setText(""+ dateFormat.format(date) + "\t 9:03 \t FOREST: Strange Reaction..");
 
+        TextView resText1 = (TextView) findViewById(R.id.ResponseView1);
+        resText1.setText(""+ dateFormat.format(date) + "\t 9:03 \t ORANGE: Strange Reaction..");
+
+        TextView resText2 = (TextView) findViewById(R.id.ResponseView2);
+        resText2.setText(""+ dateFormat.format(date) + "\t 9:03 \t FOREST: Strange Reaction..");
+
     }
 }

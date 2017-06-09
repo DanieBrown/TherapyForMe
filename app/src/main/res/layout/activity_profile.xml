@@ -70,25 +70,18 @@
         android:textColor="#000000" />
 
 
-
     <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/movieTextFave2"
+        android:id="@+id/menuButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:maxHeight="50dp"
+        android:maxWidth="50dp"
+        android:scaleType="fitXY"
+        android:background="@android:drawable/screen_background_light_transparent"
+        app:srcCompat="@drawable/menu_icon"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="40dp"
-        app:srcCompat="@drawable/menu_icon" />
-    <!--<ImageButton-->
-        <!--android:id="@+id/menuButton"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginStart="62dp"-->
-        <!--android:background="@android:drawable/screen_background_light_transparent"-->
-        <!--app:srcCompat="@android:drawable/men"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_toEndOf="@+id/header"-->
-        <!--android:contentDescription="goes to the menu " />-->
+        android:layout_toStartOf="@+id/infoButton" />
+
 
     <ImageButton
         android:id="@+id/infoButton"
@@ -99,23 +92,24 @@
         android:maxWidth="30dp"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/info_icon"
+        android:contentDescription="will go give more info about the app"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/menuButton"
-        android:contentDescription="will go give more info about the app" />
+        android:layout_alignEnd="@+id/movieTextFave2"
+        android:layout_marginEnd="27dp" />
 
     <ImageButton
         android:id="@+id/settingsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/menuButton"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/infoButton"
         android:background="@drawable/settings_icon"
         android:maxHeight="40dp"
         android:maxWidth="40dp"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/settings_icon"
-        android:contentDescription="will go to the settings" />
+        android:contentDescription="will go to the settings"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/infoButton"
+        android:layout_alignBottom="@+id/menuButton" />
 
     <SearchView
         android:id="@+id/simpleSearchView"
@@ -206,11 +200,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/responsesCheck"
-        android:text="YOUR RESPONSES"
+        android:text="Your Responses"
         android:layout_alignBottom="@+id/responsesCheck"
         android:layout_alignEnd="@+id/favText"
-        android:layout_toEndOf="@+id/responsesCheck" />
+        android:layout_toEndOf="@+id/responsesCheck"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="25sp"/>
 
+    <TextView
+        android:id="@+id/ResponseView1"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_below="@+id/yourResponsesText"
+        android:layout_marginTop="21dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/ResponseView2"
+        android:background="#ffffff"
+        android:maxHeight="50dp"
+        android:maxWidth="350dp"
+        android:scaleType="fitXY"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/ResponseView2"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_below="@+id/ResponseView1"
+        android:layout_marginTop="23dp"
+        android:layout_alignEnd="@+id/movieTextFave"
+        android:layout_alignParentStart="true"
+        android:background="#ffffff"
+        android:maxHeight="50dp"
+        android:maxWidth="350dp"
+        android:scaleType="fitXY"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
 
 
 </RelativeLayout>

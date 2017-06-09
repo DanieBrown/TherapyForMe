@@ -43,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, VideoActivity.class));
             }
         });
+        //Button three, to redirect to profile layout page
+        ImageButton btn3 = (ImageButton) findViewById(R.id.profileButton);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, profileActivity.class));
+            }
+        });
 
 
         URL url = null;

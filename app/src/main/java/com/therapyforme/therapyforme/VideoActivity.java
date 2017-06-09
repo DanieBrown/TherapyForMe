@@ -39,10 +39,12 @@ public class VideoActivity extends AppCompatActivity implements OnSeekBarChangeL
 
         //init others
         mVrVideoView.setEventListener(new ActivityEventListener());
+        playPause();
         mSeekBar.setOnSeekBarChangeListener(this);
 
         //init others
         mVrVideoView2.setEventListener(new ActivityEventListener2());
+        playPause2();
         mSeekBar2.setOnSeekBarChangeListener(this);
     }
 

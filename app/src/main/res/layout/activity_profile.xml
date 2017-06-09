@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ocean_background2">
+
+
+    <ImageView
+        android:id="@+id/profilePic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/user"
+        android:layout_marginStart="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/userLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_12345"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_alignLeft="@+id/profilePic"
+        android:layout_below="@+id/profilePic"
+        android:layout_alignStart="@+id/profilePic" />
+
+    <TextView
+        android:id="@+id/progressView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/userLabel"
+        android:layout_below="@+id/userLabel"
+        android:layout_marginTop="28dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:text="PROGRESS:" />
+
+    <TextView
+        android:id="@+id/dayProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:layout_alignBaseline="@+id/progressView"
+        android:layout_alignBottom="@+id/progressView"
+        android:layout_toEndOf="@+id/progressView" />
+
+    <TextView
+        android:id="@+id/OTP_Plan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OTP_21 PLAN"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_alignBaseline="@+id/progressView"
+        android:layout_alignBottom="@+id/progressView"
+        android:layout_alignStart="@+id/menuButton" />
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="My Plan"
+        android:textStyle="bold"
+        android:textColor="#000000" />
+
+
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/movieTextFave2"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="40dp"
+        app:srcCompat="@drawable/menu_icon" />
+    <!--<ImageButton-->
+        <!--android:id="@+id/menuButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="62dp"-->
+        <!--android:background="@android:drawable/screen_background_light_transparent"-->
+        <!--app:srcCompat="@android:drawable/men"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_toEndOf="@+id/header"-->
+        <!--android:contentDescription="goes to the menu " />-->
+
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:background="@drawable/info_icon"
+        android:maxHeight="60dp"
+        android:maxWidth="30dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/info_icon"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/menuButton"
+        android:contentDescription="will go give more info about the app" />
+
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/menuButton"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/infoButton"
+        android:background="@drawable/settings_icon"
+        android:maxHeight="40dp"
+        android:maxWidth="40dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/settings_icon"
+        android:contentDescription="will go to the settings" />
+
+    <SearchView
+        android:id="@+id/simpleSearchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:maxHeight="40dp"
+        android:maxWidth="240dp"
+        android:scaleType="fitXY"
+        android:queryHint="Search Here"
+        android:layout_alignBottom="@+id/userLabel"
+        android:layout_toEndOf="@+id/userLabel" />
+
+    <ImageView
+        android:id="@+id/favImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:maxHeight="40dp"
+        android:maxWidth="40dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/heart_icon"
+        android:contentDescription="The image for the users favorite videos"
+        android:layout_below="@+id/progressView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp" />
+
+    <TextView
+        android:id="@+id/favText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favorites"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:maxHeight="100dp"
+        android:maxWidth="100dp"
+        android:scaleType="fitXY"
+        android:textSize="25sp"
+        android:layout_alignTop="@+id/favImage"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp"
+        android:layout_alignBottom="@+id/favImage"
+        android:layout_toEndOf="@+id/favImage" />
+
+    <TextView
+        android:id="@+id/movieTextFave"
+        android:layout_width="350dp"
+        android:layout_height="25dp"
+        android:background="#ffffff"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:maxHeight="50dp"
+        android:maxWidth="350dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/movieTextFave2"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/movieTextFave2"
+        android:layout_width="350dp"
+        android:layout_height="25dp"
+        android:layout_alignStart="@+id/favImage"
+        android:layout_below="@+id/favImage"
+        android:layout_marginTop="17dp"
+        android:background="#ffffff"
+        android:maxHeight="50dp"
+        android:maxWidth="350dp"
+        android:scaleType="fitXY"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/responsesCheck"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/movieTextFave"
+        android:maxHeight="50dp"
+        android:maxWidth="350dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="24dp"
+        app:srcCompat="@drawable/checkmark_icon" />
+
+    <TextView
+        android:id="@+id/yourResponsesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/responsesCheck"
+        android:text="YOUR RESPONSES"
+        android:layout_alignBottom="@+id/responsesCheck"
+        android:layout_alignEnd="@+id/favText"
+        android:layout_toEndOf="@+id/responsesCheck" />
+
+
+
+</RelativeLayout>

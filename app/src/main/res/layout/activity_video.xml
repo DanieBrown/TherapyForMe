@@ -53,5 +53,57 @@
         android:layout_alignStart="@+id/videoView2"
         android:layout_alignEnd="@+id/videoView2" />
 
+    <SearchView
+        android:id="@+id/simpleSearchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:maxHeight="40dp"
+        android:maxWidth="240dp"
+        android:scaleType="fitXY"
+        android:queryHint="Search Here"
+        android:layout_above="@+id/videoView"
+        android:layout_toEndOf="@+id/MainView" />
+    <ImageButton
+        android:id="@+id/menuButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:maxHeight="50dp"
+        android:maxWidth="50dp"
+        android:scaleType="fitXY"
+        android:background="@android:drawable/screen_background_light_transparent"
+        app:srcCompat="@drawable/menu_icon"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/infoButton" />
+
+
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:background="@drawable/info_icon"
+        android:maxHeight="60dp"
+        android:maxWidth="30dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/info_icon"
+        android:contentDescription="will go give more info about the app"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/settingsButton" />
+
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/settings_icon"
+        android:maxHeight="40dp"
+        android:maxWidth="40dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/settings_icon"
+        android:contentDescription="will go to the settings"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/menuButton"
+        android:layout_toEndOf="@+id/simpleSearchView" />
+
 
 </RelativeLayout>

@@ -90,5 +90,36 @@
         android:scaleType="fitXY"
         app:srcCompat="@drawable/info_icon" />
 
+    <TextView
+        android:id="@+id/testResume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:text="Resume"
+        android:layout_alignBottom="@+id/playButton"
+        android:layout_alignStart="@+id/playButton"
+        android:layout_marginStart="19dp" />
+
+    <TextView
+        android:id="@+id/textVideos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:text="My Videos"
+        android:layout_below="@+id/profileButton"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:text="My Plan"
+        android:layout_below="@+id/profileButton"
+        android:layout_alignStart="@+id/profileButton" />
+
 
 </RelativeLayout>

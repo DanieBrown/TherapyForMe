@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ocean_background2">
+    android:background="@drawable/orangetherapy2">
 
 
     <ImageView
@@ -94,8 +94,7 @@
         app:srcCompat="@drawable/info_icon"
         android:contentDescription="will go give more info about the app"
         android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/movieTextFave2"
-        android:layout_marginEnd="27dp" />
+        android:layout_alignEnd="@+id/movieTextFave2" />
 
     <ImageButton
         android:id="@+id/settingsButton"

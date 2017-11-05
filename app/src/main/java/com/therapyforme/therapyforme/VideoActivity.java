@@ -17,8 +17,11 @@ public class VideoActivity extends AppCompatActivity implements OnSeekBarChangeL
     private SeekBar mSeekBar;
     private VrVideoView mVrVideoView2;
     private SeekBar mSeekBar2;
+    private VrVideoView mVrVideoView3;
+    private SeekBar mSeekBar3;
     private boolean mIsPaused;
     private boolean mIsPaused2;
+    private boolean mIsPaused3;
 
 
     @Override
@@ -37,6 +40,9 @@ public class VideoActivity extends AppCompatActivity implements OnSeekBarChangeL
         mVrVideoView2 = (VrVideoView) findViewById(R.id.videoView2);
         mSeekBar2 = (SeekBar) findViewById(R.id.seek_bar2);
 
+        mVrVideoView3 = (VrVideoView) findViewById(R.id.videoView3);
+        mSeekBar3 = (SeekBar) findViewById(R.id.seek_bar3);
+
         //init others
         mVrVideoView.setEventListener(new ActivityEventListener());
         playPause();
@@ -46,6 +52,11 @@ public class VideoActivity extends AppCompatActivity implements OnSeekBarChangeL
         mVrVideoView2.setEventListener(new ActivityEventListener2());
         playPause2();
         mSeekBar2.setOnSeekBarChangeListener(this);
+
+        //init others
+        mVrVideoView3.setEventListener(new ActivityEventListener3());
+        playPause3();
+        mSeekBar3.setOnSeekBarChangeListener(this);
     }
 
     public void playPause() {
@@ -68,6 +79,15 @@ public class VideoActivity extends AppCompatActivity implements OnSeekBarChangeL
         mIsPaused2 = !mIsPaused2;
     }
 
+    public void playPause3(){
+        if( mIsPaused3 ) {
+            mVrVideoView3.playVideo();
+        } else {
+            mVrVideoView3.pauseVideo();
+        }
+        mIsPaused3 = !mIsPaused3;
+    }
+
     public void onPlayPausePressed() {
 
     }
@@ -83,8 +103,10 @@ public class VideoActivity extends AppCompatActivity implements OnSeekBarChangeL
         super.onPause();
         mVrVideoView.pauseRendering();
         mVrVideoView2.pauseRendering();
+        mVrVideoView3.pauseRendering();
         mIsPaused = true;
         mIsPaused2 = true;
+        mIsPaused3 = true;
     }
 
     @Override
@@ -92,14 +114,16 @@ public class VideoActivity extends AppCompatActivity implements OnSeekBarChangeL
         super.onResume();
         mVrVideoView.resumeRendering();
         mVrVideoView2.resumeRendering();
+        mVrVideoView3.resumeRendering();
         mIsPaused = false;
-        mIsPaused2 = false;
+        mIsPaused3 = false;
     }
 
     @Override
     protected void onDestroy() {
         mVrVideoView.shutdown();
         mVrVideoView2.shutdown();
+        mVrVideoView3.shutdown();
         super.onDestroy();
     }
 
@@ -108,6 +132,7 @@ public class VideoActivity extends AppCompatActivity implements OnSeekBarChangeL
         if( fromUser ) {
             mVrVideoView.seekTo(progress);
             mVrVideoView2.seekTo(progress);
+            mVrVideoView3.seekTo(progress);
         }
     }
 
@@ -190,6 +215,42 @@ public class VideoActivity extends AppCompatActivity implements OnSeekBarChangeL
         }
     }
 
+    /**
+     * New inner class to deal with sub class methods
+     *
+     */
+    private class ActivityEventListener3 extends VrVideoEventListener {
+        @Override
+        public void onLoadSuccess() {
+            super.onLoadSuccess();
+            mIsPaused3 = true;
+            mSeekBar3.setProgress((int) mVrVideoView3.getCurrentPosition());
+
+        }
+
+        @Override
+        public void onLoadError(String errorMessage) {
+            super.onLoadError(errorMessage);
+        }
+
+        @Override
+        public void onClick() {
+            playPause3();
+        }
+
+        @Override
+        public void onNewFrame() {
+            super.onNewFrame();
+            mSeekBar3.setProgress((int) mVrVideoView3.getCurrentPosition());
+        }
+
+        @Override
+        public void onCompletion() {
+            //restart the video allowing it to loop
+            mVrVideoView3.seekTo(0);
+        }
+    }
+
     class VideoLoaderTask extends AsyncTask<Void, Void, Boolean> {
 
         @Override
@@ -199,6 +260,7 @@ public class VideoActivity extends AppCompatActivity implements OnSeekBarChangeL
                 options.inputType = VrVideoView.Options.TYPE_MONO;
                 mVrVideoView.loadVideoFromAsset("rollerCoaster.mp4", options);
                 mVrVideoView2.loadVideoFromAsset("scary.mp4", options);
+                mVrVideoView3.loadVideoFromAsset("flying.mp4", options);
             } catch( IOException e ) {
                 //Handle exception
             }

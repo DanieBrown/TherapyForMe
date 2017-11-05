@@ -53,6 +53,23 @@
         android:layout_alignStart="@+id/videoView2"
         android:layout_alignEnd="@+id/videoView2" />
 
+    <com.google.vr.sdk.widgets.video.VrVideoView
+        android:id="@+id/videoView3"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/seek_bar3"
+        android:layout_alignStart="@+id/seek_bar3" />
+
+    <SeekBar
+        android:id="@+id/seek_bar3"
+        android:layout_height="32dp"
+        android:layout_width="match_parent"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/seek_bar"
+        android:layout_marginBottom="96dp"
+        android:layout_alignEnd="@+id/seek_bar" />
+
     <SearchView
         android:id="@+id/simpleSearchView"
         android:layout_width="wrap_content"
